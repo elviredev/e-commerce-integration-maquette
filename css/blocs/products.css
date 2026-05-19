@@ -18,11 +18,13 @@
   flex-direction: column;
   border: 1px solid var(--border);
   background: var(--text-inverse);
-  padding: 6px 6px 16px 6px;
+  --padding: 6px;
+  padding: var(--padding) var(--padding) 16px var(--padding);
   border-radius: 20px;
   box-shadow: 2px 3px 30px rgba(208,185,181,0.13);
   position: relative;
   transition: .3s;
+  scroll-snap-align: center;
 
   &:hover {
     border-color: var(--contrast);
@@ -53,6 +55,18 @@
   /*height: auto;*/
   object-fit: cover;
   border-radius: 18px;
+}
+
+.product-card.has-big-image .product-card__image {
+  /* image collée aux bords de la carte */
+  width: calc(100% + var(--padding) * 2);
+  height: 258px;
+  margin: calc(var(--padding) * -1);
+  margin-bottom: 0;
+
+  @media (min-width: 1100px) {
+    height: 416px;
+  }
 }
 
 .product-card__body {
@@ -196,7 +210,8 @@
   }
 
   .product-card {
-    padding: 12px 12px 24px 12px;
+    --padding: 12px;
+    padding-bottom: 24px;
   }
 
   .product-card__image {

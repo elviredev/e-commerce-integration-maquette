@@ -1,0 +1,48 @@
+.section-promos {
+  position: relative;
+
+  .slider-navigation {
+    display: none;
+  }
+
+  .section-title {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.slider-promos {
+  display: flex;
+  gap: 17px;
+  overflow: auto;
+  padding-bottom: .5rem;
+  margin-bottom: -.5rem;
+  scroll-snap-type: x proximity;
+  /* sortir le padding de l'elt qui prendra toute la largeur de l'écran */
+  margin-inline: calc(var(--container-padding) * -1);
+  padding-inline: var(--container-padding);
+
+  .product-card {
+    width: 270px;
+    flex: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  .section-promos {
+    .slider-navigation {
+      display: flex;
+    }
+
+    .section-title {
+      margin-bottom: 3.25rem;
+    }
+  }
+  .slider-promos {
+    gap: 27px;
+    overflow: hidden;
+  }
+  .slider-promos .product-card {
+    /* 4 cards sur la ligne  */
+    width: calc((100% - 3 * 27px) / 4);
+  }
+}
