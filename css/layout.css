@@ -1,0 +1,15 @@
+.container {
+  /* selon taille de l'ecran, prendre le minimum entre width du container, 1530px, et 100% de la largeur - le padding de 18px x 2*/
+  max-width: min(var(--container-width), calc(100% - 2 * var(--container-padding)));
+  margin-inline: auto;
+}
+
+/* Tous les enfants directs et adjacents d'un autre élément donc ne sélectionne pas le 1er */
+.sections > * + * {
+  margin-top: 50px;
+}
+@media (min-width: 1100px) {
+  .sections > * + * {
+    margin-top: 150px;
+  }
+}

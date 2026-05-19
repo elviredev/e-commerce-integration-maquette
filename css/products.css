@@ -1,0 +1,261 @@
+.section-trending {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  align-items: center;
+  position: relative;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 8px;
+  width: 100%;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  background: var(--text-inverse);
+  padding: 6px 6px 16px 6px;
+  border-radius: 20px;
+  box-shadow: 2px 3px 30px rgba(208,185,181,0.13);
+  position: relative;
+  transition: .3s;
+
+  &:hover {
+    border-color: var(--contrast);
+  }
+
+  .location {
+    margin: 12px 0 14px 8px;
+  }
+
+  .product-card__title::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  .btn-like {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.product-card__image {
+  width: 100%;
+  height: 124px;
+  /*aspect-ratio: 161 / 124;*/
+  /*height: auto;*/
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.product-card__body {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: .375rem;
+  margin-inline: 8px;
+}
+
+
+/**
+ * Section "Continuez vos achats
+ */
+
+.resume-shopping {
+  padding-block: 1.875rem;
+  background-color: var(--contrast-light);
+  border-radius: 20px;
+  position: relative;
+
+  .section-title {
+    margin-bottom: 1.875rem;
+  }
+
+  .slider-navigation {
+    display: none;
+    right: 68px;
+    top: 68px;
+  }
+}
+
+.product-card-full {
+  position: relative;
+  width: 270px;
+  height: 358px;
+  border-radius: 32px;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 22px;
+  /* on ne veut pas changer la taille de l'elt */
+  flex: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  /* permet d'aimanter l'elt quand on défile */
+  scroll-snap-align: center;
+
+  color: var(--text-inverse);
+
+  .btn-like {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.51) 100%);
+    z-index: -1;
+    transition: .3s;
+  }
+
+  &:hover::after {
+    transform: translateY(40%);
+  }
+
+  &:hover .product-card-full__image {
+    transform: scale(1.05) rotate(1deg);
+  }
+}
+
+.slider-products {
+  display: flex;
+  gap: 12px;
+  overflow: auto;
+  /* on aimante le défilement */
+  scroll-snap-type: x proximity;
+
+  padding-bottom: .5rem;
+  margin-bottom: -.5rem;
+  padding-inline: 20px;
+}
+
+.product-card-full__image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.product-card-full__body {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: flex-end;
+}
+
+/* rendre toute la carte cliquable */
+.product-card-full__title::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+
+/**
+ * Responsive
+ */
+
+@media (min-width: 700px) {
+  .section-trending {
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section-trending .btn-bordered {
+    position: absolute;
+    top: -0.3rem;
+    right: var(--container-padding);
+  }
+}
+
+@media (min-width: 1100px) {
+  .products-grid {
+    gap: 1.25rem 1.69rem;
+  }
+
+  .product-card {
+    padding: 12px 12px 24px 12px;
+  }
+
+  .product-card__image {
+    height: 286px;
+  }
+
+  .product-card .location {
+    margin-top: 34px;
+    margin-bottom: 14px;
+  }
+
+  .resume-shopping {
+    padding: 68px;
+
+    .section-title {
+      margin-bottom: 3rem;
+    }
+
+    .slider-navigation {
+      display: flex;
+    }
+  }
+
+  .slider-products {
+    gap: 56px;
+    overflow: hidden;
+    padding-inline: 0;
+  }
+
+  .product-card-full {
+    width: calc((100% - 2 * 56px) / 3);
+    height: 564px;
+  }
+  .product-card-full .btn-like {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
