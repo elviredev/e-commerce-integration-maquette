@@ -30,3 +30,20 @@ button {
     border: none;
     cursor: pointer;
 }
+
+hr {
+  border: unset;
+  height: 1px;
+  margin: unset;
+  background: var(--border);
+}
+
+ul, li {
+  margin: unset;
+  padding: unset;
+  list-style: none;
+}
+
+input, select {
+  font-family: unset;
+}

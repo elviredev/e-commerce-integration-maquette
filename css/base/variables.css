@@ -1,16 +1,17 @@
 :root {
+  --container-padding: 18px;
+  --container-width: 1530px;
+
   --border: #E7E7E7;
+  --contrast-border: #9BA992;
   --contrast: #7F8E76;
   --contrast-light: #F5FAF2;
-  --contrast-border: #9BA992;
   --category-border: #DDE5D7;
   --nav-color: #B5B5B5;
+  --search-bg: #FCFCFC;
   --price: #00A3A4;
   --text-dark: #1F1F1F;
   --text-inverse: #FFFFFF;
   --text-light: #545454;
   --text-title: #101010;
-
-  --container-padding: 18px;
-  --container-width: 1530px;
 }
